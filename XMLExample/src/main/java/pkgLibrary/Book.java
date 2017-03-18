@@ -2,6 +2,7 @@ package pkgLibrary;
 
 import java.util.Date;
 
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -13,9 +14,11 @@ public class Book {
 	private String title;
 	private String genre;
 	private double price;
+	private double cost;
 	private Date publish_date;
 	private String description;
 
+	//here I have added the cost attribute and datatype double
 	public Book() {
 
 	}
@@ -23,6 +26,7 @@ public class Book {
 	public Book(String id, String author, String title, String genre, double price, Date publish_date, String description)
 	{
 		super();
+		this.cost=cost;
 		this.id = id;
 		this.author = author;
 		this.title = title;
@@ -32,7 +36,17 @@ public class Book {
 		this.description = description;
 	}
 	
- 
+	public double cost() {
+		return cost;
+	}
+
+	@XmlElement
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	public Book(String id){
+	
+}
 
 	public String getId() {
 		return id;
